@@ -1,5 +1,10 @@
 package com.example.kurzwork;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,14 +27,22 @@ public class KurzworkApplication {
 //	}
 @Autowired
 transient CustomerRepository repository;
+
+	@GetMapping("/customers")
+	public String listCustomers(Model model) {
+		Iterable<Customer> customers = repository.findAll();
+		model.addAttribute("customers", customers);
+		return "customers";
+	}
 	@GetMapping("/")
 	public String greeting() {
 
 		log.info("hello--");
-		//repository.save(new Customer("Chloe", "O'Brian"));
-		//repository.save(new Customer("Kim", "Bauer"));
+		repository.save(new Customer("Chloe", "O'Brian"));
+		repository.save(new Customer("Kim", "Bauer"));
 		System.out.println();
 		return "greeting";
+
 	}
 
 
