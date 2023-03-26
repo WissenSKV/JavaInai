@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="/bootstrap/bootstrap.bundle.min.js" ></script></body>
+
+<div th:include="header"></div>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-0">
+        </div>
+        <div class="col-12">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://avatars.mds.yandex.net/i?id=329a652c9e349faef992e77a18534d0bd8471613-8210080-images-thumbs&n=13" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="https://avatars.mds.yandex.net/i?id=cfe39cc156ec0936141c739ba86a7320-2908117-images-thumbs&n=13" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="https://avatars.mds.yandex.net/i?id=57602785a9785850236aa56cd1e3b87575f234f7-7598369-images-thumbs&n=13" class="d-block w-100" alt="...">
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-0">
+        </div>
+    </div>
+</div>
+
+<!--Services-->
+<div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Volkswagen's Main services</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="https://avatars.mds.yandex.net/i?id=329a652c9e349faef992e77a18534d0bd8471613-8210080-images-thumbs&n=13" width="50px">
+            </div>
+            <h3 class="fs-2">Service</h3>
+            <p>Choosing a reliable Volkswagen car, you get quality guarantees from the brand and the most comfortable
+                conditions during the period of car ownership. </p>
+            <a href="mailto:mephi1984@gmail.com" class="icon-link d-inline-flex align-items-center">
+                Get the quote
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="https://avatars.mds.yandex.net/i?id=329a652c9e349faef992e77a18534d0bd8471613-8210080-images-thumbs&n=13" width="50px">
+            </div>
+            <h3 class="fs-2">Cars in stock</h3>
+            <p>Becoming the owner of a new Volkswagen car is easier than you thought - just select the desired
+                configuration or find the dealer closest to you.</p>
+            <a href="catalog/" class="icon-link d-inline-flex align-items-center">
+                Select a car
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="feature col">
+            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img src="https://avatars.mds.yandex.net/i?id=329a652c9e349faef992e77a18534d0bd8471613-8210080-images-thumbs&n=13" width="50px">
+            </div>
+            <h3 class="fs-2">Find a dealer</h3>
+            <p>Find the Volkswagen dealership closest to you.</p>
+            <a href="about/" class="icon-link d-inline-flex align-items-center">
+                Find a dealer
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#chevron-right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div th:include="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script></body>
+</body>
+</html>
