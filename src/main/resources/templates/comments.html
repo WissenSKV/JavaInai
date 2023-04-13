@@ -1,39 +1,17 @@
 <!--Comments block-->
-<div class="container" style="margin-top:0px;margin-bottom:5px">
-    <div class="row">
-        <div class="col-md-11">
-            <form method="post" class="form-floating gap-3 col-4 ">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
-                          name="comment_text"
-                          style="height: 100px"></textarea>
-                <label for="floatingTextarea">Comments</label>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="submit">Send</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-
-<!--Comments-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="media g-mb-30 media-comment">
-                <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
-                    <div class="g-mb-15">
-                        <h5 class="h5 g-color-gray-dark-v1 mb-0">ghj</h5>
-                        <span class="g-color-gray-dark-v4 g-font-size-12">bhj</span>
-                    </div>
-                    <p>ghjghj</p>
-                </div>
+<comments>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <div class="comments">
+        <form method="post" th:action="@{/car/{id}/comment(id=${car.id})}">
+            <textarea name="comment_text" placeholder="Leave a comment here"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="comments-list">
+            <div class="comment" th:each="comment : ${comments}">
+                <h3 th:text="${comment.username}"></h3>
+                <p th:text="${comment.commentText}"></p>
             </div>
         </div>
-
     </div>
-</div>
+    </html>
+</comments>

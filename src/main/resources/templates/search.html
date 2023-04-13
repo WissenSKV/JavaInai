@@ -44,23 +44,27 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <div class="col">
+                    <div class="col" th:each="result : ${catalog}">
                         <div class="card shadow-sm">
-                            <img src="img" class="d-block w-100" width="100%" height="auto">
+                            <img th:src="${result.imgUrl}" class="d-block w-100" width="100%" height="auto">
                             <div class="card-body">
-                                <h3 class="fs-2">name</h3>
-                                <p class="card-text">deskr</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="id" type="button"
-                                           class="btn btn-sm btn-outline-secondary">View</a>
-                                    </div>
+                                <h3 class="fs-2" th:text="${result.name}"></h3>
+                                <p class="card-text" th:text="${result.description}"></p>
+                                <<div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a th:href="@{'/catalog/' + ${result.id}}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+            </div>
+        </div>
+
+
+
+        </div>
             </div>
         </div>
     </main>
