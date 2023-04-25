@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Comments {
 
@@ -14,6 +16,8 @@ public class Comments {
     private Long catalogId;
     private String username;
     private String commentText;
+    private LocalDateTime dateTime;
+    private String dateTimeFormatted;
 
     protected Comments() {}
 
@@ -58,5 +62,18 @@ public class Comments {
     public void setCommentText(String commentText) {
         this.commentText = commentText;
     }
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
 
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+    public String getDateTimeFormatted() {
+        return dateTimeFormatted;
+    }
+
+    public void setDateTimeFormatted(String dateTimeFormatted) {
+        this.dateTimeFormatted = dateTimeFormatted;
+    }
 }
