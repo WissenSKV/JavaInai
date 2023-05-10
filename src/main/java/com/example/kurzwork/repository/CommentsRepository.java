@@ -1,5 +1,6 @@
-package com.example.kurzwork.Controllers;
+package com.example.kurzwork.repository;
 
+import com.example.kurzwork.model.Comments;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

@@ -1,7 +1,8 @@
-package com.example.kurzwork.Controllers;
+package com.example.kurzwork.repository;
 
 import java.util.List;
 
+import com.example.kurzwork.model.Catalog;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CatalogRepository extends CrudRepository<Catalog, Long> {

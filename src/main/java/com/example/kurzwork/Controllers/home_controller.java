@@ -1,5 +1,7 @@
 package com.example.kurzwork.Controllers;
 
+import com.example.kurzwork.model.Karysel;
+import com.example.kurzwork.repository.KaryselRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.kurzwork.Controllers;
+package com.example.kurzwork.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.kurzwork.Controllers;
+package com.example.kurzwork.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +19,7 @@ public class Comments {
     private LocalDateTime dateTime;
     private String dateTimeFormatted;
 
-    protected Comments() {}
+    public Comments() {}
 
     public Comments(Long catalogId, String username, String commentText) {
         this.catalogId = catalogId;
