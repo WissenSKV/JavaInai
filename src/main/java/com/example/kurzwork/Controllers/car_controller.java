@@ -5,6 +5,8 @@ import com.example.kurzwork.model.Comments;
 import com.example.kurzwork.repository.CatalogRepository;
 import com.example.kurzwork.repository.CommentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,11 +41,19 @@ public class car_controller {
 
 
     @PostMapping("/car/{id}/comment")
-    public RedirectView addComment(@PathVariable Long id, @RequestParam String comment_text, Model model) {
+    public RedirectView addComment(@PathVariable Long id,/* @RequestParam (value="username", required=false) String username,*/ @RequestParam String comment_text, Model model) {
         Catalog catalog = catalogRepository.findById(id).orElseThrow(() -> new RuntimeException("Car not found"));
         Comments comment = new Comments();
         comment.setCatalogId(catalog.getId());
-        comment.setUsername("Anonymous");
+
+        var a = SecurityContextHolder.getContext().getAuthentication();
+        String username = a.getName();
+        if(username == null || username=="" || username=="anonymousUser")
+        {
+            comment.setUsername("Anonymous");
+        } else {
+            comment.setUsername(username);
+        }
         comment.setCommentText(comment_text);
         comment.setDateTime(LocalDateTime.now());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM. d, yyyy, h:mm a", Locale.ENGLISH);
